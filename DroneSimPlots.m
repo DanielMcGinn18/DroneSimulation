@@ -124,13 +124,10 @@ daspect([1 1 1]);
 % a bad assumttion when considering the bottom and top of the quadrotor.
 % Because of this, the quadrotor can cut the turns around the hoops
 % oriented normal to the world Z axis slightly closer. I will replicate the
-% plots with a smaller bounding sphere that has a diameter from the top to
-% the bottom of the quadrotor
+% plots with the same size bounding sphere, but only consider when center
+% of the quadrotor is .505 bellow or above the hoop
 
 %% Hoop 2 in XY Plane (Relaxed Boundary)
-
-droneBoundarySphereR = .00505; % in m
-hoopRadius = .5; hoopBoundaryRadius = hoopRadius-droneBoundarySphereR;
 
 th = 0:pi/50:2*pi;
 xHoop = hoopRadius * cos(th) + hoop2Pos(1);
