@@ -1,17 +1,24 @@
-%% Torque Plots
-
+%% Input Signals
 figure(1);
+subplot(4,1,1); plot(Elevation.Time,Elevation.Data); title('Elevation'); xlabel('Time (s)'); ylabel('Elevation (m)');
+subplot(4,1,2); plot(Roll.Time,Roll.Data); title('Roll'); xlabel('Time (s)'); ylabel('Angle (rad)');
+subplot(4,1,3); plot(Pitch.Time,Pitch.Data); title('Pitch'); xlabel('Time (s)'); ylabel('Angle (rad)');
+subplot(4,1,4); plot(Yaw.Time,Yaw.Data); title('Yaw'); xlabel('Time (s)'); ylabel('Angle (rad)');
+sgtitle('Reference Input Signals')
+
+%% Torque Plots
+figure(2);
 plot(rotorTorque1.Time,rotorTorque1.Data,rotorTorque2.Time,rotorTorque2.Data,rotorTorque3.Time,rotorTorque3.Data,rotorTorque4.Time,rotorTorque4.Data);
 title('Rotor Torque');xlabel('Time (s)');ylabel('Torque (Nm)');
 legend('Rotor 1','Rotor 2','Rotor 3','Rotor 4');
 
-figure(2);
+figure(3);
 plot(rotorTorque1.Time,rotorTorque1.Data,rotorTorque2.Time,abs(rotorTorque2.Data),rotorTorque3.Time,rotorTorque3.Data,rotorTorque4.Time,abs(rotorTorque4.Data));
 title('Absolute Value of Rotor Torque');xlabel('Time (s)');ylabel('Torque (Nm)');
 legend('Rotor 1','Rotor 2','Rotor 3','Rotor 4'); ylim([.079 .121]);
 
 %% Drone Navagation through Obstacle Course
-figure(3);
+figure(4);
 plot3(droneX.Data,droneY.Data,droneZ.Data);
 hold on; plot3(0,0,0,'o','Color','g'); 
 plot3(5,0,0,'o','Color','r'); plot3(10,0,2,'o','Color','r');
@@ -53,7 +60,7 @@ xH1 = droneX.Data(i(1):i(end));
 yH1 = droneY.Data(i(1):i(end));
 zH1 = droneZ.Data(i(1):i(end));
 
-figure(4);
+figure(5);
 plot(yHoop, zHoop, yBoundary, zBoundary,'--',yH1,zH1);
 title('Quadrotor position in the XZ plane relative to Hoop 1 during approach and departure')
 legend('Hoop', 'Hoop Boundary for Quadrotor Center','Quadrotor Center Position');
@@ -72,7 +79,7 @@ xH2 = droneX.Data(i(1):i(467));
 yH2 = droneY.Data(i(1):i(467));
 zH2 = droneZ.Data(i(1):i(467));
 
-figure(5);
+figure(6);
 plot(xHoop, yHoop, xBoundary, yBoundary,'--',xH2,yH2);
 title('Quadrotor position in the XY plane relative to Hoop 2 during approach and departure')
 legend('Hoop', 'Hoop Boundary for Quadrotor Center','Quadrotor Center Position');
@@ -92,7 +99,7 @@ xH3 = droneX.Data(i(1):i(end));
 yH3 = droneY.Data(i(1):i(end));
 zH3 = droneZ.Data(i(1):i(end));
 
-figure(6);
+figure(7);
 plot(xHoop, zHoop, xBoundary, zBoundary,'--',xH3,zH3);
 title('Quadrotor position in the XZ plane relative to Hoop 3 during approach and departure')
 legend('Hoop', 'Hoop Boundary for Quadrotor Center','Quadrotor Center Position');
@@ -111,7 +118,7 @@ xH4 = droneX.Data(i(1):i(end));
 yH4 = droneY.Data(i(1):i(end));
 zH4 = droneZ.Data(i(1):i(end));
 
-figure(7);
+figure(8);
 plot(xHoop, yHoop, xBoundary, yBoundary,'--',xH4,yH4);
 title('Quadrotor position in the XY plane relative to Hoop 4 during approach and departure')
 legend('Hoop', 'Hoop Boundary for Quadrotor Center','Quadrotor Center Position');
@@ -141,7 +148,7 @@ xH2 = droneX.Data(i(1):i(end));
 yH2 = droneY.Data(i(1):i(end));
 zH2 = droneZ.Data(i(1):i(end));
 
-figure(5);
+figure(6);
 plot(xHoop, yHoop, xBoundary, yBoundary,'--',xH2,yH2);
 title('Quadrotor position in the XY plane relative to Hoop 2 during approach and departure')
 legend('Hoop', 'Hoop Boundary for Quadrotor Center','Quadrotor Center Position');
@@ -161,7 +168,7 @@ xH4 = droneX.Data(i(1):i(end));
 yH4 = droneY.Data(i(1):i(end));
 zH4 = droneZ.Data(i(1):i(end));
 
-figure(7);
+figure(8);
 plot(xHoop, yHoop, xBoundary, yBoundary,'--',xH4,yH4);
 title('Quadrotor position in the XY plane relative to Hoop 4 during approach and departure')
 legend('Hoop', 'Hoop Boundary for Quadrotor Center','Quadrotor Center Position');
