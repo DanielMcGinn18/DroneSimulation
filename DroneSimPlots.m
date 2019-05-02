@@ -96,7 +96,7 @@ figure(6);
 plot(xHoop, zHoop, xBoundary, zBoundary,'--',xH3,zH3);
 title('Quadrotor position in the XZ plane relative to Hoop 3 during approach and departure')
 legend('Hoop', 'Hoop Boundary for Quadrotor Center','Quadrotor Center Position');
-xlabel('Position in X (cm)');ylabel('Position in Z (cm)');
+xlabel('Position in X (m)');ylabel('Position in Z (m)');
 daspect([1 1 1]);
 
 %% Hoop 4 in XY Plane
