@@ -25,7 +25,8 @@ plot3(5,0,0,'o','Color','r'); plot3(10,0,2,'o','Color','r');
 plot3(35,0,0,'o','Color','r');plot3(35,10,5,'o','Color','r'); hold off;
 title('Done Path Through Obstacle Course');
 legend('Drone Position','Starting Point','Hoop Positions');
-xlabel('Position in X');ylabel('Position in Y');zlabel('Position in Z');
+xlabel('Position in X (m)');ylabel('Position in Y (m)');zlabel('Position in Z (m)');
+xlim([-2 40]); ylim([-20 20]); zlim([-2 20]);
 
 %% Hoop Validation
 
